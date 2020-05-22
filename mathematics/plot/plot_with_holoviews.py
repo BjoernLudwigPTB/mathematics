@@ -48,3 +48,9 @@ plot_curve(renderer="bokeh")
 # %%
 plot_curve(renderer="plotly")
 
+# %%
+hv.extension("plotly")
+
+gapminder = px.data.gapminder().query("year==2007")
+fig = hv.Scatter(gapminder, "gdpPercap", "lifeExp")
+fig.opts(logx=True, xlim=(2.2,5), ylim=(35, 85), sizemin=5, size=gapminder["pop"]/gapminder["pop"].max()*40)

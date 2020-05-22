@@ -1,0 +1,7 @@
+numpy
+holoviews[recommended]
+plotly
+scipy
+psutil
+requests
+jupyter

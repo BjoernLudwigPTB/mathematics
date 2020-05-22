@@ -1,0 +1,4 @@
+.hypothesis
+holoviews-examples/
+.ipynb_checkpoints/
+*.html

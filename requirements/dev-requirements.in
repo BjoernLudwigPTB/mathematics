@@ -1,6 +1,9 @@
 # dev-requirements.in
 -c requirements.txt
-pytest
+
 hypothesis
-pylint
 nbstripout
+pylint
+pytest
+pytest-cov
+tox

@@ -1,4 +1,16 @@
+# Testing clutter #
+###################
 .hypothesis
+
+# IDE clutter #
+###############
+.vscode/
+.idea/
+
+# Execution clutter #
+#####################
 holoviews-examples/
 .ipynb_checkpoints/
 *.html
+
+

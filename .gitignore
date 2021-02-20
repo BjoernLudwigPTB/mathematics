@@ -1,6 +1,7 @@
 # Testing clutter #
 ###################
 .hypothesis
+junit.xml
 
 # IDE clutter #
 ###############

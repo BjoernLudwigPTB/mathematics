@@ -16,26 +16,26 @@ def visualize_dist_by_samples(
     bins: Optional[int] = None,
 ):
     """Draw the histogram for a number of samples from the given distribution
-    
+
     Visualize a probability distribution by drawing random samples and creating the
-    histogram from these samples. It is guaranteed that the specified amound of
-    samples fall inbetween the specified bounds.
+    histogram from these samples. It is guaranteed that the specified amount of
+    samples fall between the specified bounds.
 
     Parameters
     ----------
 
         size : int, optional
             number of samples to draw from the distribution, defaults to 1000
-        dist : stats.rv_continuous, otpional
+        dist : stats.rv_continuous, optional
             distribution to draw from, defaults to standard normal distribution
         lower_bound : float, optional
             the lower bound to truncate the underlying distribution at
         upper_bound : float, optional
             the upper bound to truncate the underlying distribution at
         bins : int, optional
-            number of bins for the histrogram which should be around one percent
-            of the nummber of samples, which is the default
-    
+            number of bins for the histogram which should be around one percent
+            of the number of samples, which is the default
+
     Returns
     -------
 
@@ -43,11 +43,11 @@ def visualize_dist_by_samples(
             the holoviews histogram of the samples
     """
     # We create a histogram based on Bokeh, but could exchange that simply by
-    # "matplatlib".
+    # "matplotlib".
     hv.extension("bokeh")
 
-    # Set up the number of bins reasonably.
-    bins = int(size / 100)
+    if bins is None:
+        bins = int(size / 100)
 
     # Draw the first set of samples.
     realizations = dist.rvs(size=size)

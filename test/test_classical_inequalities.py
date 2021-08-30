@@ -6,7 +6,7 @@ from numpy.testing import raises
 from pytest import fixture
 from scipy import stats
 
-from mathematics.classical_inequalities import jensen_inequality
+from mathematics.classical_inequalities import check_jensen_inequality
 
 
 
@@ -31,10 +31,10 @@ def not_convex_function(draw):
 
 @given(convex_function())
 def test_minimal_call_jensen_inequality(phi):
-    assert jensen_inequality(stats.uniform, phi)
+    assert check_jensen_inequality(stats.uniform, phi)
 
 @given(not_convex_function())
 def test_minimal_call_jensen_inequality_fails(phi):
     print("Hello World!")
-    assert not jensen_inequality(stats.uniform, phi)
+    assert not check_jensen_inequality(stats.uniform, phi)
     
